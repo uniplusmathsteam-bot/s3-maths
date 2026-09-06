@@ -67,20 +67,6 @@ window.JM28_COMICS = {
         file: "quest-04-orthocentre-block.png",
       },
     ],
-    lawCard: {
-      title: "Four Special Lines — Quick Reference",
-      file: "triangle-lines-laws-card-color.png",
-    },
-    lawCards: [
-      {
-        title: "Four Special Lines — Quick Reference",
-        file: "triangle-lines-laws-card-color.png",
-      },
-      {
-        title: "Four Triangle Centres — Quick Reference",
-        file: "triangle-centres-quick-reference-color.png",
-      },
-    ],
   },
   anglePairs: {
     id: "anglePairs",

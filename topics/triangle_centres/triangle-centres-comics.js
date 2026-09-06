@@ -1,4 +1,4 @@
-/* JM28 comics — linear JM35 reader + two follow-ups when a concept finishes. */
+/* JM28 comics — linear reader without follow-up questions. */
 (function () {
   "use strict";
 
@@ -537,7 +537,7 @@
     var order = window.JM28_COMIC_ORDER || ["triangleLines", "anglePairs", "similarCongruent"];
     if (!map || !window.initJmComicsBundle) return;
     var series = order.map(function (key) {
-      var comics = window.jmComicsFromTopic(map[key], CHECKS[key] || {});
+      var comics = window.jmComicsFromTopic(map[key], {});
       if (key === "similarCongruent" && window.JM28Maze) {
         comics = window.JM28Maze.attach(comics);
       }

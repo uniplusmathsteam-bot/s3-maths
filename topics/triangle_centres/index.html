@@ -39,6 +39,32 @@
       height: auto;
       vertical-align: middle;
     }
+    .summary-reference-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .summary-reference-card {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .summary-reference-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .summary-reference-card figcaption {
+      padding: 10px 12px;
+      border-top: 1px solid var(--line);
+      font-weight: 700;
+      text-align: center;
+    }
+    @media (max-width: 760px) {
+      .summary-reference-grid { grid-template-columns: 1fr; }
+    }
     .comics-mode.hidden, .comics-pane.hidden { display: none; }
   </style>  <link rel="stylesheet" href="../../shared/jm28-panel.css?v=20260906-comicw">
   <link rel="stylesheet" href="../../shared/page-motion.css?v=20260904-jm28c">
@@ -124,12 +150,26 @@
       <div class="subnav" id="comics-series-nav" aria-label="Comic series"></div>
       <div class="subnav" id="comics-subnav" aria-label="Comic pages"></div>
       <div id="comics-stage"></div>
-      <p class="hint">Read each page. When a concept finishes, answer the two follow-up questions. They stay on this tab only.</p>
     </section>
     <section id="panel-summary" class="jm-panel hidden">
       <section class="block">
         <h2>Summary</h2>
-        <p class="hint">Coming soon.</p>
+        <div class="summary-reference-grid">
+          <figure class="summary-reference-card">
+            <img
+              src="../../comics/Special lines and centres in triangles/triangle-lines-laws-card-color.png"
+              alt="Four special lines in a triangle quick reference"
+              loading="lazy">
+            <figcaption>Four Special Lines — Quick Reference</figcaption>
+          </figure>
+          <figure class="summary-reference-card">
+            <img
+              src="../../comics/Special lines and centres in triangles/triangle-centres-quick-reference-color.png"
+              alt="Four triangle centres quick reference"
+              loading="lazy">
+            <figcaption>Four Triangle Centres — Quick Reference</figcaption>
+          </figure>
+        </div>
       </section>
     </section>
     <section id="panel-quiz" class="jm-panel hidden">
@@ -141,10 +181,10 @@
   </main>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-  <script src="comics-manifest.js?v=20260906-maze"></script>
+  <script src="comics-manifest.js?v=20260906-summary"></script>
   <script defer src="../../shared/jm-comics-engine.js?v=20260906-maze"></script>
   <script defer src="similar-congruent-maze.js?v=20260906-maze4"></script>
-  <script defer src="triangle-centres-comics.js?v=20260906-maze"></script>
+  <script defer src="triangle-centres-comics.js?v=20260906-no-followups"></script>
   <script defer src="../../shared/jm-tabs.js?v=20260830b"></script>
   <script defer src="triangle-centres-tools.js?v=20260830j"></script>
   <script>
