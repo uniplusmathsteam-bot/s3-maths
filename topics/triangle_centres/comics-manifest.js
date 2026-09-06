@@ -44,9 +44,7 @@ window.JM28_COMICS = {
       {
         id: "ch8",
         title: "Chapter 8 — Circumcentre",
-        file: "triangle-centres-chapter-8-circumcentre-color.png",
-        captionEn: "It looks like everyone has learned a lot about the four centres. So — did you know the four centres are also used in real life?",
-        captionZh: "看來大家已經學會了很多四心方面的相關知識，那麼，你知道現實生活中也有很多四心的運用嗎？",
+        file: "triangle-centres-chapter-8-circumcentre-color.png?v=20260906-ch8panel",
       },
       {
         id: "quest1",
