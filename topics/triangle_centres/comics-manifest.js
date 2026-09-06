@@ -49,7 +49,7 @@ window.JM28_COMICS = {
       {
         id: "quest1",
         title: "Real life 1 — Incentre: the biggest cake circle",
-        file: "quest-01-incentre-cake.png?v=20260906-arcs-radii",
+        file: "quest-01-incentre-cake.png?v=20260906-bisectors-fixed",
       },
       {
         id: "quest2",
