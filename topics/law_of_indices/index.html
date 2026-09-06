@@ -583,26 +583,40 @@
     <!-- Zero -->
     <section class="block">
       <h2>6. Zero exponent · \(x^{0}=1\)</h2>
-      <div class="panel ok">
-        <h3>Proof</h3>
-        <p class="line">\(0=n-n\)</p>
-        <p class="line accent">\(x^{0}=x^{n-n}=\dfrac{x^{n}}{x^{n}}=1\)</p>
-        <p>(for \(x\neq 0\)). Same number on top and bottom cancels to \(1\).</p>
+      <div class="step-frame" data-stepper="zero">
+        <button class="nav-btn prev" type="button" aria-label="Previous">←</button>
+        <div class="step-body">
+          <div class="step-panel active" data-step="0">
+            <div class="step-label">Step 1 / 4</div>
+            <p class="step-title">Start from \(0=n-n\)</p>
+            <p class="step-text">Any number minus itself is zero. Write the zero index as a difference of equal indices.</p>
+            <p class="step-math">\[ 0=n-n \]</p>
+          </div>
+          <div class="step-panel" data-step="1">
+            <div class="step-label">Step 2 / 4</div>
+            <p class="step-title">Apply the quotient rule</p>
+            <p class="step-text">Then \(x^{0}=x^{n-n}=\dfrac{x^{n}}{x^{n}}\). Same number on top and bottom cancels to \(1\) (for \(x\neq 0\)).</p>
+            <p class="step-math">\[ x^{0}=x^{n-n}=\dfrac{x^{n}}{x^{n}}=1 \]</p>
+          </div>
+          <div class="step-panel" data-step="2">
+            <div class="step-label">Step 3 / 4</div>
+            <p class="step-title">Therefore \(0^{0}\) is undefined</p>
+            <p class="step-text">
+              Any positive power of \(0\) is \(0\): \(0^{n}=0\).
+              The same pattern would become \(\dfrac{0^{n}}{0^{n}}\) — dividing by zero, which is not allowed.
+            </p>
+            <p class="step-math">\[ 0^{0}\text{ is undefined} \]</p>
+          </div>
+          <div class="step-panel" data-step="3">
+            <div class="step-label">Step 4 / 4</div>
+            <p class="step-title">Summary</p>
+            <p class="step-text">Zero exponent is \(1\) only when the base is not zero.</p>
+            <p class="step-math">\[ x^{0}=1\quad(x\neq 0),\qquad 0^{0}\text{ undefined} \]</p>
+          </div>
+        </div>
+        <button class="nav-btn next" type="button" aria-label="Next">→</button>
       </div>
-      <div class="panel" style="margin-top:12px;border-color:rgba(253,230,138,.4)">
-        <h3>Therefore \(0^{0}\) is undefined</h3>
-        <p>
-          Any positive power of \(0\) is \(0\): \(0^{n}=0\) (you are multiplying zeros).
-        </p>
-        <p>
-          So the same “proof” pattern would become
-          \(\dfrac{0^{n}}{0^{n}}\), which is essentially dividing by \(0\).
-        </p>
-        <p>
-          Division by zero is not allowed, so \(0^{0}\) is <strong>undefined</strong>.
-        </p>
-        <p class="line accent">\(0^{0}\) is undefined</p>
-      </div>
+      <div class="step-dots" data-dots="zero"><span class="on"></span><span></span><span></span><span></span></div>
       <p class="formula">\[ x^{0}=1\quad(x\neq 0),\qquad 0^{0}\text{ undefined} \]</p>
     </section>
 
@@ -610,21 +624,37 @@
     <section class="block">
       <h2>7. Negative exponent · \(x^{-n}=\dfrac{1}{x^{n}}\)</h2>
       <p class="hint">Uses the quotient rule and \(x^{0}=1\).</p>
-      <div class="stack">
-        <div class="panel">
-          <h3>Proof · via division</h3>
-          <p>Consider \(\dfrac{x^{0}}{x^{n}}\).</p>
-          <p>Left side: \(\dfrac{1}{x^{n}}\).</p>
-          <p>Right side (quotient rule): \(x^{0-n}=x^{-n}\).</p>
-          <p class="line accent">Therefore \(x^{-n}=\dfrac{1}{x^{n}}\).</p>
+      <div class="step-frame" data-stepper="neg">
+        <button class="nav-btn prev" type="button" aria-label="Previous">←</button>
+        <div class="step-body">
+          <div class="step-panel active" data-step="0">
+            <div class="step-label">Step 1 / 4</div>
+            <p class="step-title">Proof · via division</p>
+            <p class="step-text">Consider \(\dfrac{x^{0}}{x^{n}}\). Left side is \(\dfrac{1}{x^{n}}\) because \(x^{0}=1\).</p>
+            <p class="step-math">\[ \dfrac{x^{0}}{x^{n}}=\dfrac{1}{x^{n}} \]</p>
+          </div>
+          <div class="step-panel" data-step="1">
+            <div class="step-label">Step 2 / 4</div>
+            <p class="step-title">Quotient rule on the indices</p>
+            <p class="step-text">Right side: \(x^{0-n}=x^{-n}\). The two sides are equal, so the negative power is a reciprocal.</p>
+            <p class="step-math">\[ x^{-n}=\dfrac{1}{x^{n}} \]</p>
+          </div>
+          <div class="step-panel" data-step="2">
+            <div class="step-label">Step 3 / 4</div>
+            <p class="step-title">Check · via product</p>
+            <p class="step-text">\(x^{n}\cdot x^{-n}=x^{n+(-n)}=x^{0}=1\). The number that multiplies \(x^{n}\) to give \(1\) is \(\dfrac{1}{x^{n}}\).</p>
+            <p class="step-math">\[ x^{n}\cdot x^{-n}=1 \]</p>
+          </div>
+          <div class="step-panel" data-step="3">
+            <div class="step-label">Step 4 / 4</div>
+            <p class="step-title">Summary</p>
+            <p class="step-text">A negative index means “one over the positive power” (base not zero).</p>
+            <p class="step-math">\[ x^{-n}=\dfrac{1}{x^{n}}\quad(x\neq 0) \]</p>
+          </div>
         </div>
-        <div class="panel">
-          <h3>Check · via product</h3>
-          <p>\(x^{n}\cdot x^{-n}=x^{n+(-n)}=x^{0}=1\).</p>
-          <p>The number that multiplies \(x^{n}\) to give \(1\) is \(\dfrac{1}{x^{n}}\).</p>
-          <p class="line accent">Same conclusion: \(x^{-n}=\dfrac{1}{x^{n}}\).</p>
-        </div>
+        <button class="nav-btn next" type="button" aria-label="Next">→</button>
       </div>
+      <div class="step-dots" data-dots="neg"><span class="on"></span><span></span><span></span><span></span></div>
       <p class="formula">\[ x^{-n}=\frac{1}{x^{n}}\quad(x\neq 0) \]</p>
     </section>
       </div>
@@ -1327,7 +1357,7 @@
     });
 
     waitKatex().then(() => {
-      ["intro", "twox", "root"].forEach(initStepper);
+      ["intro", "twox", "root", "zero", "neg"].forEach(initStepper);
       resetProd();
       resetQuot();
       resetPow();
