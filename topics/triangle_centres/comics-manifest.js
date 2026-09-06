@@ -29,22 +29,22 @@ window.JM28_COMICS = {
       {
         id: "ch5",
         title: "Chapter 5 — Orthocentre",
-        file: "triangle-centres-chapter-5-orthocentre-color.png?v=20260906-allrows",
+        file: "triangle-centres-chapter-5-orthocentre-color.png?v=20260906-upper-restored",
       },
       {
         id: "ch6",
         title: "Chapter 6 — Centroid",
-        file: "triangle-centres-chapter-6-centroid-color.png?v=20260906-allrows",
+        file: "triangle-centres-chapter-6-centroid-color.png?v=20260906-upper-restored",
       },
       {
         id: "ch7",
         title: "Chapter 7 — In-centre",
-        file: "triangle-centres-chapter-7-incentre-color.png?v=20260906-allrows",
+        file: "triangle-centres-chapter-7-incentre-color.png?v=20260906-upper-restored",
       },
       {
         id: "ch8",
         title: "Chapter 8 — Circumcentre",
-        file: "triangle-centres-chapter-8-circumcentre-color.png?v=20260906-teacher-cropped",
+        file: "triangle-centres-chapter-8-circumcentre-color.png?v=20260906-upper-restored",
       },
       {
         id: "quest1",
