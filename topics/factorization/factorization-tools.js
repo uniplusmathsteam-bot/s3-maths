@@ -104,7 +104,10 @@
   function phoneTexSize(base, svg) {
     const root = svgRoot(svg);
     const vbW = root && root.viewBox && root.viewBox.baseVal ? root.viewBox.baseVal.width : 410;
-    const renderW = root && root.getBoundingClientRect ? root.getBoundingClientRect().width : vbW;
+    const measuredW = root && root.getBoundingClientRect ? root.getBoundingClientRect().width : 0;
+    // Hidden tabs report a rendered width of 0 during initialisation. Treat the
+    // viewBox width as the fallback; otherwise 11px becomes 165px (11 × 15).
+    const renderW = measuredW > 0 ? measuredW : vbW;
     const targetScreenPx = 15;
     const screenPx = base * (renderW / vbW);
     if (screenPx >= targetScreenPx) return base;
