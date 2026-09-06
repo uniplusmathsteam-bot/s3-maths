@@ -44,7 +44,7 @@ window.JM28_COMICS = {
       {
         id: "ch8",
         title: "Chapter 8 — Circumcentre",
-        file: "triangle-centres-chapter-8-circumcentre-color.png?v=20260906-upper-restored",
+        file: "triangle-centres-chapter-8-circumcentre-color.png?v=20260906-complete-balanced",
       },
       {
         id: "quest1",
