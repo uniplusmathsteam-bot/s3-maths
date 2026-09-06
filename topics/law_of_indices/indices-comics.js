@@ -303,7 +303,7 @@
   function start() {
     var map = window.JM24_COMICS;
     var order = window.JM24_COMIC_ORDER || ["rules", "scientific-notation", "binary"];
-    if (!map || !window.initJmComicsBundle) return;
+    if (!map || !window.initJmComicsBundle || !window.jmComicsFromTopic) return;
     var series = order.map(function (key) {
       return {
         id: key,
@@ -313,6 +313,8 @@
     });
     window.initJmComicsBundle(series);
   }
+
+  window.startJm24Comics = start;
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", start);

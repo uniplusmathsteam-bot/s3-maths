@@ -205,7 +205,12 @@
       head.appendChild(title);
       article.appendChild(head);
 
-      if (comic.image) {
+      if (typeof comic.mount === "function") {
+        var host = document.createElement("div");
+        host.className = "comic-html";
+        comic.mount(host);
+        article.appendChild(host);
+      } else if (comic.image) {
         var fig = document.createElement("figure");
         fig.className = "comic-figure";
         var img = document.createElement("img");
@@ -258,13 +263,20 @@
       stage.appendChild(article);
     }
 
-    render();
+    var pageQ = 0;
+    try {
+      pageQ = parseInt(new URLSearchParams(location.search).get("page") || "0", 10);
+    } catch (e) {
+      pageQ = 0;
+    }
+    if (pageQ >= 1 && pageQ <= comics.length) go(pageQ - 1);
+    else render();
   };
 
-  window.initJmComicsBundle = function (series) {
+  window.initJmComicsBundle = function (series, startIndex) {
     if (!series || !series.length) return;
     var seriesNav = document.getElementById("comics-series-nav");
-    var current = 0;
+    var current = Math.max(0, Math.min(series.length - 1, startIndex || 0));
 
     function show(i) {
       current = i;
@@ -290,6 +302,6 @@
       }
     }
 
-    show(0);
+    show(current);
   };
 })();

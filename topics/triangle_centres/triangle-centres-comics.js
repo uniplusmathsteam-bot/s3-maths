@@ -537,13 +537,22 @@
     var order = window.JM28_COMIC_ORDER || ["triangleLines", "anglePairs", "similarCongruent"];
     if (!map || !window.initJmComicsBundle) return;
     var series = order.map(function (key) {
+      var comics = window.jmComicsFromTopic(map[key], CHECKS[key] || {});
+      if (key === "similarCongruent" && window.JM28Maze) {
+        comics = window.JM28Maze.attach(comics);
+      }
       return {
         id: key,
         label: map[key].label,
-        comics: window.jmComicsFromTopic(map[key], CHECKS[key] || {}),
+        comics: comics,
       };
     });
-    window.initJmComicsBundle(series);
+    var startKey = "";
+    try {
+      startKey = new URLSearchParams(location.search).get("series") || "";
+    } catch (e) { startKey = ""; }
+    var startIndex = order.indexOf(startKey);
+    window.initJmComicsBundle(series, startIndex < 0 ? 0 : startIndex);
   }
 
   if (document.readyState === "loading") {

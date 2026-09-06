@@ -23,6 +23,14 @@
   background: var(--accent, var(--a, #4FC3F7));
   border-color: var(--accent, var(--a, #4FC3F7));
 }
+/* JM34 reader width — keep comics from stretching with 1100px lesson shells */
+#panel-comics,
+#view-comics {
+  width: min(860px, 100%);
+  max-width: min(860px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
 .comic-page { display: grid; gap: 16px; }
 .comic-page-head { text-align: center; }
 .comic-chapter {
@@ -66,11 +74,16 @@
 .comic-page .quiz-mark.bad { color: var(--bad, #be123c); }
 .comic-page .quiz-mc { display: flex; flex-direction: column; gap: 8px; }
 .comic-figure {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 860px;
   border-radius: 14px;
   border: 1px solid var(--line, rgba(26, 31, 46, 0.08));
   background: #0f172a;
   overflow: hidden;
+}
+.comic-html {
+  margin: 0;
+  overflow: visible;
 }
 .comic-figure img {
   display: block;

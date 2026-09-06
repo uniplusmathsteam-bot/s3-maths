@@ -138,6 +138,15 @@ main .jm-panel {
   box-shadow: none !important;
 }
 
+/* Comics stay at JM34 width when the lesson shell is 1100px */
+#panel-comics,
+#view-comics {
+  width: min(860px, 100%) !important;
+  max-width: min(860px, 100%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .jm-page .jm-panel.hidden,
 .jm-page .panel.hidden,
 .jm-page .mode-panel.hidden {

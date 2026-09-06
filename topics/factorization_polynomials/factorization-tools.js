@@ -93,6 +93,17 @@
     return Math.max(0.55, Math.min(0.85, w / 400));
   }
 
+  /** CSS px scale of the SVG on screen (viewBox unit → CSS pixel). */
+  function svgScreenScale(svg) {
+    const root = svgRoot(svg);
+    if (!root || !root.getBoundingClientRect) return 1;
+    const vbW = root.viewBox && root.viewBox.baseVal && root.viewBox.baseVal.width
+      ? root.viewBox.baseVal.width : 400;
+    const renderW = root.getBoundingClientRect().width;
+    if (!renderW || !vbW) return 1;
+    return Math.max(0.35, Math.min(1.25, renderW / vbW));
+  }
+
   function phoneTexSize(base, svg) {
     const root = svgRoot(svg);
     const vbW = root && root.viewBox && root.viewBox.baseVal ? root.viewBox.baseVal.width : 410;
@@ -183,20 +194,22 @@
     p.appendChild(t);
   }
   // LaTeX label centred at (cx, cy) inside the SVG via <foreignObject>.
+  // HTML/KaTeX font-size is CSS px and does NOT follow SVG scaling — multiply by
+  // svgScreenScale so labels shrink with the figure when the window is narrow.
   function tex(p, cx, cy, latex, color, size, w, h) {
     if (isTabletTouch() || isPhoneCompact()) {
       const base = size || 16;
       const fs = isPhoneCompact() ? phoneTexSize(base, p) : base;
       return svgLabel(p, cx, cy, latex, color, fs);
     }
-    const ls = labelScale(p);
-    const fs = (size || 16) * ls;
-    w = (w || 170) * ls; h = (h || 46) * ls;
+    const s = svgScreenScale(p);
+    const fsUser = size || 16;
+    w = w || 170; h = h || 46;
     const fo = E("foreignObject", { x: cx - w / 2, y: cy - h / 2, width: w, height: h });
     fo.setAttribute("overflow", "visible");
     const div = document.createElement("div");
-    div.style.cssText = "width:" + w + "px;height:" + h + "px;display:flex;align-items:center;" +
-      "justify-content:center;color:" + color + ";font-size:" + fs + "px;line-height:1;" +
+    div.style.cssText = "width:" + (w * s) + "px;height:" + (h * s) + "px;display:flex;align-items:center;" +
+      "justify-content:center;color:" + color + ";font-size:" + (fsUser * s) + "px;line-height:1;" +
       "white-space:nowrap;";
     try { katex.render(latex, div, { throwOnError: false, displayMode: false }); }
     catch (e) { div.textContent = latex; }
@@ -885,7 +898,6 @@
     });
     let phoneResizeT = null;
     window.addEventListener("resize", () => {
-      if (!isPhoneCompact()) return;
       const panel = document.getElementById("panel-tools");
       if (!panel || panel.classList.contains("hidden")) return;
       clearTimeout(phoneResizeT);
