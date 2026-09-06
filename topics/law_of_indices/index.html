@@ -343,7 +343,7 @@
   </style>
   <link rel="stylesheet" href="../../lessons/_shared/lesson.css?v=20260830b">
   <link rel="stylesheet" href="../../shared/comics-bridge.css?v=20260829c">
-  <link rel="stylesheet" href="../../shared/jm-comics.css?v=20260830-fu"><link rel="stylesheet" href="../../shared/jm-lesson.css?v=20260904-jm29b"><link rel="stylesheet" href="../../shared/paper-labs.css?v=20260904-jm29">  <link rel="stylesheet" href="../../shared/jm28-panel.css?v=20260904-jm28c">
+  <link rel="stylesheet" href="../../shared/jm-comics.css?v=20260906-comicw"><link rel="stylesheet" href="../../shared/jm-lesson.css?v=20260906-comicw"><link rel="stylesheet" href="../../shared/paper-labs.css?v=20260904-jm29">  <link rel="stylesheet" href="../../shared/jm28-panel.css?v=20260906-comicw">
   <link rel="stylesheet" href="../../shared/page-motion.css?v=20260904-jm28c">
 </head>
 <body class="paper-labs">
@@ -670,39 +670,46 @@
             <button class="nav-btn prev" type="button" aria-label="Previous">←</button>
             <div class="step-body">
               <div class="step-panel active" data-step="0">
-                <div class="step-label">Step 1 / 4</div>
+                <div class="step-label">Step 1 / 5</div>
                 <p class="step-title">Standard form</p>
                 <p class="step-text">Scientific notation (standard form) writes a number as a coefficient times a power of ten.</p>
                 <p class="step-math">\[ a \times 10^{n}\qquad\text{where}\quad 1 \le a < 10 \]</p>
               </div>
               <div class="step-panel" data-step="1">
-                <div class="step-label">Step 2 / 4</div>
-                <p class="step-title">Large numbers → positive \(n\)</p>
-                <div class="step-examples">
-                  <div class="chip-ex">\(102\,000\,000 = 1.02 \times 10^{8}\)</div>
-                  <div class="chip-ex">\(9\,410\,000\,000 = 9.41 \times 10^{9}\)</div>
-                </div>
-                <p class="step-text">Move the decimal point left; count how many places → that is \(n\).</p>
+                <div class="step-label">Step 2 / 5</div>
+                <p class="step-title">Why \(102\,000\,000 = 1.02 \times 10^{8}\)?</p>
+                <p class="step-text">Factor out powers of ten step by step:</p>
+                <p class="step-math">\[ 102\,000\,000 = 102 \times 1\,000\,000 = 1.02 \times 100\,000\,000 \]</p>
+                <p class="step-text">\(100\,000\,000\) has eight zeros, so \(100\,000\,000 = 10^{8}\). Therefore</p>
+                <p class="step-math">\[ 102\,000\,000 = 1.02 \times 10^{8} \]</p>
               </div>
               <div class="step-panel" data-step="2">
-                <div class="step-label">Step 3 / 4</div>
+                <div class="step-label">Step 3 / 5</div>
+                <p class="step-title">Rule: left shift ↔ index \(+1\)</p>
+                <p class="step-text">Moving the decimal point one place left multiplies by \(10\), so the power of ten goes up by \(1\). Count how many places you move left — that count is \(n\).</p>
+                <div class="step-examples">
+                  <div class="chip-ex">\(9\,410\,000\,000 = 9.41 \times 10^{9}\)</div>
+                </div>
+              </div>
+              <div class="step-panel" data-step="3">
+                <div class="step-label">Step 4 / 5</div>
                 <p class="step-title">Small numbers → negative \(n\)</p>
                 <div class="step-examples">
                   <div class="chip-ex">\(0.000\,504 = 5.04 \times 10^{-4}\)</div>
                   <div class="chip-ex">\(0.000\,000\,000\,000\,001\,4 = 1.4 \times 10^{-15}\)</div>
                 </div>
-                <p class="step-text">Move the decimal point right; the count is negative.</p>
+                <p class="step-text">Move the decimal point right (divide by \(10\) each time); the count is negative.</p>
               </div>
-              <div class="step-panel" data-step="3">
-                <div class="step-label">Step 4 / 4</div>
-                <p class="step-title">Why powers of \(10\)?</p>
-                <p class="step-text">Each shift of the decimal is one factor of \(10\). That is exactly the index law you already know: \(10^{m} \times 10^{n} = 10^{m+n}\).</p>
+              <div class="step-panel" data-step="4">
+                <div class="step-label">Step 5 / 5</div>
+                <p class="step-title">Same idea for any shift</p>
+                <p class="step-text">Each left shift is one factor of \(10\) (index \(+1\)); each right shift divides by \(10\) (index \(-1\)). That is \(10^{m}\times 10^{n}=10^{m+n}\).</p>
                 <p class="step-math">\[ 2.45 \times 10^{2} \times 10^{6} = 2.45 \times 10^{8} \]</p>
               </div>
             </div>
             <button class="nav-btn next" type="button" aria-label="Next">→</button>
           </div>
-          <div class="step-dots" data-dots="sci-intro"><span class="on"></span><span></span><span></span><span></span></div>
+          <div class="step-dots" data-dots="sci-intro"><span class="on"></span><span></span><span></span><span></span><span></span></div>
         </section>
 
         <p class="part-title">Part 2 · Move the decimal</p>
